@@ -51,10 +51,10 @@ export default function Navbar() {
             {open && (
               <div className="absolute left-0 top-full z-20 min-w-[260px] pt-2">
                 <div className="rounded-xl bg-white p-3 text-black shadow-xl ring-1 ring-black/10">
-                <p className="px-3 pb-2 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">
-                  Ministries
-                </p>
-                <div className="flex flex-col gap-1">
+                  <p className="px-3 pb-2 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">
+                    Ministries
+                  </p>
+                  <div className="flex flex-col gap-1">
                   <Link
                     href="/ministries/mens"
                     className="rounded px-3 py-2 hover:bg-gray-100 hover:text-blue-600"
@@ -90,7 +90,7 @@ export default function Navbar() {
                   >
                     Other
                   </Link>
-                </div>
+                  </div>
                 </div>
               </div>
             )}

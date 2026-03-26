@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Other Ministries",
+  description:
+    "See the additional ministries at Tabernacle of Grace Church, including prayer, Bible study, Sunday school, outreach, welcome, and interpretation ministry.",
+};
+
 export default function Other() {
   return (
     <main>

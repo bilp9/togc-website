@@ -1,5 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description:
+    "Welcome to Tabernacle of Grace Church of the Nazarene, a Haitian-American congregation serving Chandler, Arizona with worship, prayer, and community.",
+};
 
 export default function Home() {
   return (
@@ -26,7 +33,7 @@ export default function Home() {
               </div>
             </div>
 
-            <p className="mb-6 text-lg text-gray-300">
+            <p className="mx-auto mb-6 max-w-2xl text-center text-lg text-gray-300">
               Byenvini! Nou kontan we ou isit la. Welcome! We are glad you are
               here.
             </p>

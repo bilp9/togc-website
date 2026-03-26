@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "View service times and weekly gatherings at Tabernacle of Grace Church, including Sunday worship, Sunday school, prayer meeting, and Bible study.",
+};
+
 export default function Services() {
   return (
     <main>

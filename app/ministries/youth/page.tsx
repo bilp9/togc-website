@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Youth and Young Adults Ministry",
+  description:
+    "Discover the Youth and Young Adults Ministry at Tabernacle of Grace Church, helping young people grow in Christ through worship, fellowship, and service.",
+};
+
 export default function Youth() {
   return (
     <main>

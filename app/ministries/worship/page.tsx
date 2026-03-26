@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Praise and Worship Ministry",
+  description:
+    "Learn about the Praise and Worship Ministry at Tabernacle of Grace Church and how it leads the congregation in worship through music, prayer, and devotion.",
+};
+
 export default function Worship() {
   return (
     <main>

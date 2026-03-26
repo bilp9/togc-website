@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Give",
+  description:
+    "Support the mission of Tabernacle of Grace Church through online giving and help serve families, discipleship, and community ministry.",
+};
+
 export default function Donate() {
   return (
     <main>

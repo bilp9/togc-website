@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Men's Ministry",
+  description:
+    "Learn about the Men's Ministry at Tabernacle of Grace Church and how it disciples and equips men to grow in Christ through fellowship, teaching, and service.",
+};
+
 export default function Mens() {
   return (
     <main>

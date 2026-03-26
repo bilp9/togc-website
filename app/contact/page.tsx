@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contact Tabernacle of Grace Church in Chandler, Arizona for location details, phone information, and church leadership.",
+};
+
 export default function Contact() {
   return (
     <main>
