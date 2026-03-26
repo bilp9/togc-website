@@ -1,10 +1,35 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handlePointerDown(event: MouseEvent | TouchEvent) {
+      if (!menuRef.current?.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("touchstart", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("touchstart", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <nav className="bg-black text-white">
@@ -28,15 +53,12 @@ export default function Navbar() {
             Services
           </Link>
 
-          <div
-            className="relative"
-            onMouseEnter={() => setOpen(true)}
-            onMouseLeave={() => setOpen(false)}
-          >
+          <div ref={menuRef} className="relative">
             <button
               type="button"
               aria-expanded={open}
               aria-haspopup="true"
+              aria-controls="ministries-menu"
               onClick={() => setOpen((current) => !current)}
               className="inline-flex items-center gap-2 rounded border border-white/15 px-3 py-2 hover:text-gray-300"
             >
@@ -49,47 +71,50 @@ export default function Navbar() {
             </button>
 
             {open && (
-              <div className="absolute left-0 top-full z-20 min-w-[260px] pt-2">
+              <div
+                id="ministries-menu"
+                className="absolute left-0 top-full z-20 min-w-[260px] pt-2"
+              >
                 <div className="rounded-xl bg-white p-3 text-black shadow-xl ring-1 ring-black/10">
                   <p className="px-3 pb-2 text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">
                     Ministries
                   </p>
                   <div className="flex flex-col gap-1">
-                  <Link
-                    href="/ministries/mens"
-                    className="rounded px-3 py-2 hover:bg-gray-100 hover:text-blue-600"
-                    onClick={() => setOpen(false)}
-                  >
-                    Men
-                  </Link>
-                  <Link
-                    href="/ministries/women"
-                    className="rounded px-3 py-2 hover:bg-gray-100 hover:text-blue-600"
-                    onClick={() => setOpen(false)}
-                  >
-                    Women
-                  </Link>
-                  <Link
-                    href="/ministries/youth"
-                    className="rounded px-3 py-2 hover:bg-gray-100 hover:text-blue-600"
-                    onClick={() => setOpen(false)}
-                  >
-                    Youth
-                  </Link>
-                  <Link
-                    href="/ministries/worship"
-                    className="rounded px-3 py-2 hover:bg-gray-100 hover:text-blue-600"
-                    onClick={() => setOpen(false)}
-                  >
-                    Worship
-                  </Link>
-                  <Link
-                    href="/ministries/other"
-                    className="rounded px-3 py-2 hover:bg-gray-100 hover:text-blue-600"
-                    onClick={() => setOpen(false)}
-                  >
-                    Other
-                  </Link>
+                    <Link
+                      href="/ministries/mens"
+                      className="rounded px-3 py-2 hover:bg-gray-100 hover:text-blue-600"
+                      onClick={() => setOpen(false)}
+                    >
+                      Men
+                    </Link>
+                    <Link
+                      href="/ministries/women"
+                      className="rounded px-3 py-2 hover:bg-gray-100 hover:text-blue-600"
+                      onClick={() => setOpen(false)}
+                    >
+                      Women
+                    </Link>
+                    <Link
+                      href="/ministries/youth"
+                      className="rounded px-3 py-2 hover:bg-gray-100 hover:text-blue-600"
+                      onClick={() => setOpen(false)}
+                    >
+                      Youth
+                    </Link>
+                    <Link
+                      href="/ministries/worship"
+                      className="rounded px-3 py-2 hover:bg-gray-100 hover:text-blue-600"
+                      onClick={() => setOpen(false)}
+                    >
+                      Worship
+                    </Link>
+                    <Link
+                      href="/ministries/other"
+                      className="rounded px-3 py-2 hover:bg-gray-100 hover:text-blue-600"
+                      onClick={() => setOpen(false)}
+                    >
+                      Other
+                    </Link>
                   </div>
                 </div>
               </div>

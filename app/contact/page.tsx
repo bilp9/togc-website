@@ -47,7 +47,7 @@ export default function Contact() {
             <h2 className="mb-3 text-2xl font-semibold">Social Media</h2>
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://www.facebook.com/tabernaclechurch/"
+                href="https://www.facebook.com/tabernacleofgracechurchaz"
                 target="_blank"
                 rel="noreferrer"
                 className="rounded bg-black px-5 py-3 font-medium text-white hover:bg-stone-800"

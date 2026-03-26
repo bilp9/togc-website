@@ -11,48 +11,54 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
-      <section className="bg-black px-6 py-20 text-white">
-        <div className="mx-auto max-w-5xl">
-          <div className="mb-8 flex flex-col items-center gap-6 text-center sm:flex-row sm:items-center sm:justify-center sm:text-left">
-              <Image
-                src="/logo.avif"
-                alt="Tabernacle of Grace Church logo"
-                width={220}
-                height={220}
-                priority
-                className="h-auto max-h-44 w-auto object-contain sm:max-h-52"
-              />
+      <section className="relative flex h-[85vh] items-center justify-center px-6 text-center text-white">
+        <div className="absolute inset-0">
+          <Image
+            src="/church.jpeg"
+            alt="Church background"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
 
-              <div>
-                <h1 className="mb-4 font-serif text-4xl font-bold sm:text-5xl">
-                  Tabernacle of Grace Church
-                </h1>
-                <p className="text-lg">
-                  A welcoming Haitian-American congregation
-                </p>
-              </div>
-            </div>
+        <div className="relative z-10 max-w-3xl px-6">
+          <Image
+            src="/logo.avif"
+            alt="Logo"
+            width={96}
+            height={96}
+            className="mx-auto mb-6 h-24 w-24 object-contain"
+          />
 
-            <p className="mx-auto mb-6 max-w-2xl text-center text-lg text-gray-300">
-              Byenvini! Nou kontan we ou isit la. Welcome! We are glad you are
-              here.
-            </p>
+          <h1 className="mb-4 text-4xl font-semibold md:text-5xl">
+            Tabernacle of Grace Church
+          </h1>
 
-            <div className="flex justify-center gap-4">
-              <Link
-                href="/services"
-                className="rounded bg-white px-6 py-3 text-black"
-              >
-                View Services
-              </Link>
+          <p className="mb-4 text-xl text-gray-200">
+            A welcoming Haitian-American congregation
+          </p>
 
-              <Link
-                href="/donate"
-                className="rounded bg-yellow-500 px-6 py-3 text-black"
-              >
-                Give
-              </Link>
-            </div>
+          <p className="mb-8 text-base text-gray-300">
+            Byenvini! Nou kontan ou la. Welcome! We are glad you are here.
+          </p>
+
+          <div className="flex justify-center gap-4">
+            <Link
+              href="/services"
+              className="rounded-md bg-white px-6 py-3 text-black"
+            >
+              View Services
+            </Link>
+
+            <Link
+              href="/donate"
+              className="rounded-md bg-yellow-500 px-6 py-3 text-black"
+            >
+              Give
+            </Link>
+          </div>
         </div>
       </section>
 

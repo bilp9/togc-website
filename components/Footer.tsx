@@ -5,9 +5,6 @@ export default function Footer() {
     <footer className="mt-16 bg-black text-white">
       <div className="mx-auto grid max-w-6xl gap-8 px-6 py-12 md:grid-cols-4">
         <div>
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-gray-400">
-            Tabernacle of Grace
-          </p>
           <h3 className="mb-3 text-3xl font-semibold">
             Tabernacle of Grace Church
           </h3>
@@ -59,7 +56,7 @@ export default function Footer() {
           <ul className="space-y-3">
             <li>
               <a
-                href="https://www.facebook.com/tabernaclechurch/"
+                href="https://www.facebook.com/tabernacleofgracechurchaz"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:text-gray-300"
